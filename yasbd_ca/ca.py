@@ -11,12 +11,12 @@ class CaRules(Rules):
         # Social / Professional
         "sr", "sra", "srta", "dr", "dra", "llic", "pres",
         "prof", "arq", "adv", "dir. gral", "ag", "acad",
-        "secr", "jtge", "jtgssa"
+        "secr", "jtge", "jtgssa",
 
         # Military / Religious
         "cpt", "com", "cmdt", "tt", "subtt", "fr", "frs",
         "mn", "alm", "cnel", "col", "gral", "st", "sta",
-        "sgt", "sgta", "cpl", "cpla"
+        "sgt", "sgta", "cpl", "cpla",
 
         # Noble / Royal
         "s. m", "s. a. r", "s. a. s", "s. s", "s. a",
@@ -28,7 +28,7 @@ class CaRules(Rules):
     REFERENCE_ABBRVS = (Rules.REFERENCE_ABBRVS - {"no", "vols", "vol"}) | {
         "pàg", "p", "núm", "n", "dir", "t", "trad", "assoc", "aprox",
         "cf", "incl", "cia", "seg", "par", "ap", "art", "cap", "ed",
-        "trad", "vol", "pròl", "ap", "cit",
+        "vol", "pròl", "cit",
     }
 
     CORP_ENTITY_ABBRVS = Rules.CORP_ENTITY_ABBRVS | {
@@ -49,8 +49,7 @@ class CaRules(Rules):
         "bnc", "p. d", "pol. ind", "rbla", "tel", "bl", "cant", "cas",
         "cint", "com", "distr", "drec", "dta", "entl", "esc",
         "esq", "fca", "hab", "parc", "pdís", "ptge", "pg", "pcta",
-        "pobl", "pta", "ptal", "pda", "ra", "ex", "p. ex"
-        # "s/n"
+        "pobl", "pta", "ptal", "pda", "ra", "ex", "p. ex",
     }
 
     DATE_ABBRVS = Rules.DATE_ABBRVS | {
@@ -82,7 +81,7 @@ class CaRules(Rules):
         "Menys", "Mentrestant", "Mentre", "Més", "Normalment",
         "Tant de bo", "Pitjor", "Però", "Posteriorment",
         "Prèviament", "Primerament", "Primer", "Probablement",
-        "Pròximament", "Potser", "Realment", "Malgrat això"
+        "Pròximament", "Potser", "Realment", "Malgrat això",
         "Segon", "Segurament", "Sempre", "Simultàniament",
         "No obstant això", "Solament", "Únicament", "Subsegüentment",
         "Successivament", "També", "Tampoc", "Tard", "Tercer", 
@@ -90,8 +89,7 @@ class CaRules(Rules):
         "Això no obstant", "A fora", "Fora", "Res",
 
         # Question words
-        "Com", "Com que", "Quins", "Quants", "Quan", "Quin", 
-        "Quant", "On", "Perquè", "Per què", "Qui", "Què"
+        "Com", "Com que", "Quants", "Quan", "On", "Perquè", "Per què", "Què",
     }
 
     # fmt: on
@@ -108,7 +106,7 @@ class CaRules(Rules):
             re.compile(rf"""
                 \b(?i:{build_optimized_pattern({"vè", "vós"})})\.
                 (?!\s+(?:{cls.COMMON_STARTERS_PATTERN})\b)
-            """, re.X),
+            """, re.VERBOSE),
 
             # Dotted geographic pairs with optional whitespace (EE. UU., EE.UU., FF. AA.)
             # Only protect the first pair so a following sentence still splits.
