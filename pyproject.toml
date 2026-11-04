@@ -1,0 +1,62 @@
+[project]
+name = "yasbd-ca"
+version = "0.1.0"
+description = "External Catalan support for yasbd-lib."
+authors = [
+  { name = "gon-zalo", email = "glopezsanch@uoc.edu" },
+  { name = "pmoraleshu", email = "pmoraleshu@uoc.edu" }
+]
+
+license = "GPL-3.0"
+readme = "README.md"
+requires-python = ">=3.11"
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Text Processing",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+keywords = [
+  "sentence-segmentation", "sentence-boundary-detection", "sbd",
+  "catalan", "text-processing", "lang-pack",
+]
+
+dependencies = [
+  "yasbd-lib>=0.16.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.5",
+  "pytest-cov>=6.2.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/gon-zalo/yasbd-ca"
+Repository = "https://github.com/gon-zalo/yasbd-ca"
+Issues = "https://github.com/gon-zalo/yasbd-ca/issues"
+
+[build-system]
+requires = [
+    "setuptools>=64",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [
+    "yasbd_ca",
+]
+
+[tool.pytest.ini_options]
+minversion = "7.4"
+testpaths = ["tests"]
+python_files = "test_*.py"
