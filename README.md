@@ -1,7 +1,7 @@
 # yasbd-ca
 External Catalan (`ca`) support for yasbd-lib. 
 
-The language profile was created by a native speaker and experienced translator, mainly on the basis of the (corrected) official Spanish profile, using different Catalan language resources. The test data were automatically translated from Spanish, post-edited and adapted by the same individual.
+The language profile was created by a native speaker and experienced translator, mainly on the basis of the (corrected) official Spanish profile, using different Catalan language resources. The test data were automatically translated from Spanish, post-edited, and adapted by the same individual.
 
 ## Install
 
@@ -10,7 +10,7 @@ The language profile was created by a native speaker and experienced translator,
 ## Usage
 
 
-```
+```python
 from yasbd import BoundaryDetector
 
 detector = BoundaryDetector(lang="ca", external_lang_packs=["yasbd_ca"])
