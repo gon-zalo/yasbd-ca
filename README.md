@@ -17,10 +17,10 @@ detector = BoundaryDetector(lang="ca", external_lang_packs=["yasbd_ca"])
 
 sentences = list(
     detector.segment(
-        "Vas veure la pel·lícula anit? Sí, va ser increïble. Em va encantar! L'actuació va ser excel·lent."
+        "Vas veure la pel·lícula anit? Sí, va ser increïble. Em va encantar!"
     )
 )
 
-# ['Vas veure la pel·lícula anit?', 'Sí, va ser increïble.', 'Em va encantar!', "L'actuació va ser excel·lent."]
+# ['Vas veure la pel·lícula anit?', 'Sí, va ser increïble.', 'Em va encantar!'"]
 
 ```
