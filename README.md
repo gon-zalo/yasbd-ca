@@ -1,2 +1,2 @@
 # yasbd-ca
-External Catalan support for yasbd-lib
+External Catalan support for yasbd-lib.
