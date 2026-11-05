@@ -53,7 +53,7 @@ class CaRules(Rules):
     }
 
     DATE_ABBRVS = Rules.DATE_ABBRVS | {
-        "gen", "febgen", "abr", "jul", "ag", "set", "oct", 
+        "gen", "febr", "abr", "jul", "ag", "set", "oct", 
         "nov", "des", "dl" , "dt" ,"dc", "dj", "dv", 
         "ds", "dg",
     }
@@ -63,7 +63,7 @@ class CaRules(Rules):
         "El", "La", "Els", "Les", "Un", "Una", "Uns", "Unes",
 
         # Pronouns
-        "Allí", "Aquell", "Aquella", "Aquelles", "Aquells",
+        "Aquell", "Aquella", "Aquelles", "Aquells",
         "Aquí", "Quin", "Quins", "Quant", "Ella", "Elles",
         "Ells", "Aquesta", "Aquestes", "Aquest", "Aquests",
         "Nosaltres", "Qui", "Tu", "Vós", "Vostè", "Vostès",
