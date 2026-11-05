@@ -98,8 +98,7 @@ class CaRules(Rules):
         """Override base regex compilation to fix pronouns/ref abbrvs behavior."""
         super()._compile_regex_dynamically()
 
-
-        # Ud./Uds./Vd./Vds. heuristic
+        # Vè./Vós.
         # Don't split if the next word is NOT a common starter (assumes it's a proper name).
         # Resolves the ambiguity "Ud. Marco" vs "Ud. Mañana".
         cls.MID_SENTENCE_FINDER_LST.extend([
@@ -112,6 +111,4 @@ class CaRules(Rules):
             # Only protect the first pair so a following sentence still splits.
             re.compile(r"\b[A-Z]{2}\.(?=\s*[A-Z]{1,2}\.)"),
 
-            # In Spanish/Portuguese, these reference abbreviationsare are case-sensitve.
-            # re.compile(r"(?:Nos?|Para)\.(?=\s*(\d+|\w))")
         ])
