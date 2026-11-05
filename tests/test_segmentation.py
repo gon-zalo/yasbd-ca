@@ -1,7 +1,8 @@
 import pytest
-
 from yasbd import BoundaryDetector
+
 from tests.test_data import catalan
+
 
 @pytest.mark.parametrize("text", catalan.TEST_DATA)
 def test_segmentation(text):

@@ -45,11 +45,11 @@ class CaRules(Rules):
         "ext", "v", "veg", "c", "cró", "diag", "trav", "trv", 
         "terr", "urb", "dept", "prov", "t. m", "ed", "bxs", "bda",
         "of", "av", "ctra", "pl", "bv", "b", "ap. de corr", "s/àt",
-        "d. c", "att", "sign", "c. p", "ntra. sra", "apmt", "àt",
+        "d. c", "att", "sign", "c. p", "apmt", "àt",
         "bnc", "p. d", "pol. ind", "rbla", "tel", "bl", "cant", "cas",
         "cint", "com", "distr", "drec", "dta", "entl", "esc",
         "esq", "fca", "hab", "parc", "pdís", "ptge", "pg", "pcta",
-        "pobl", "pta", "ptal", "pda", "ra", "ex", "p. ex",
+        "pobl", "pta", "ptal", "pda", "ra", "ex", "p. ex", "ntra", "ntre"
     }
 
     DATE_ABBRVS = Rules.DATE_ABBRVS | {
