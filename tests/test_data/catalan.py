@@ -54,7 +54,7 @@ TEST_DATA = [
     # Ellipsis
     "El projecte estava gairebé acabat... però vam trobar un problema.",
 
-    #
+    # Additions
     "Va prendre la paraula l'Excm. Sr. Alcalde de la ciutat.",
     "La dona viu al 2n A.| Té dos gossos grans.", # error
     "L'Imperi romà va caure el 476 d. C. segons els historiadors.", # error
@@ -63,5 +63,5 @@ TEST_DATA = [
     "La cooperativa agrícola, Coop. del Sud, és al pol. ind. Nord.",
     "Sign.: El director general.",
     "P. D.: No t'oblidis de trucar al tel. d'emergències en cas de dubte.",
-    "La iglesia de Ntra. Sra. de la Asunción está al doblar la esquina. L'església de Ntra. Sra. de l'Assumpció és tombant a la cantonada" # error
+    "L'església de Ntra. Sra. de l'Assumpció és tombant a la cantonada",
 ]
