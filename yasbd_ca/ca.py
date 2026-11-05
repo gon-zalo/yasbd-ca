@@ -53,7 +53,7 @@ class CaRules(Rules):
     }
 
     DATE_ABBRVS = Rules.DATE_ABBRVS | {
-        "gen", "febgen", "abr", "jul", "ag", "set", "oct", 
+        "gen", "febr", "abr", "jul", "ag", "set", "oct", 
         "nov", "des", "dl" , "dt" ,"dc", "dj", "dv", 
         "ds", "dg",
     }
