@@ -15,12 +15,10 @@ from yasbd import BoundaryDetector
 
 detector = BoundaryDetector(lang="ca", external_lang_packs=["yasbd_ca"])
 
-sentences = list(
-    detector.segment(
-        "Vas veure la pel·lícula anit? Sí, va ser increïble. Em va encantar!"
-    )
-)
+sentences = list(detector.segment("Vas veure la pel·lícula anit? Sí, va ser increïble."))
+# ['Vas veure la pel·lícula anit?', 'Sí, va ser increïble.']
 
-# ['Vas veure la pel·lícula anit?', 'Sí, va ser increïble.', 'Em va encantar!'"]
+address = list(detector.segment("La casa és a la urb. Les Roses, c/ Balaguer núm. 20, bl. B, esc. esq."))
+# ['La casa és a la urb. Les Roses, c/ Balaguer núm. 20, bl. B, esc. esq.']
 
 ```
