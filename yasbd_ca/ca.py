@@ -19,9 +19,8 @@ class CaRules(Rules):
         "sgt", "sgta", "cpl", "cpla",
 
         # Noble / Royal
-        "s. m", "s. a. r", "s. a. s", "s. s", "s. a",
-        "s. e", "v. e", "s. a. s. r", "a", "m", "r", "s", 
-        "excm", "excma", "il·lm", "il·lma", "im", "ima",
+        "a", "m", "r", "s", "excm", "excma", "il·lm", 
+        "il·lma", "im", "ima",
     }
 
     # Case-sensitive pattern matching would cover the supress ones
@@ -32,8 +31,7 @@ class CaRules(Rules):
     }
 
     CORP_ENTITY_ABBRVS = Rules.CORP_ENTITY_ABBRVS | {
-        "assoc", "cia", "adm", "aj", "ajt", "bibl", "s. coop",
-        "del", "s. a", "s. l", "soc",
+        "assoc", "cia", "adm", "aj", "ajt", "bibl", "del", "soc",
     }
 
     SECTION_MARKERS = Rules.SECTION_MARKERS | {
@@ -43,13 +41,12 @@ class CaRules(Rules):
 
     INLINE_ONLY_ABBRVS = Rules.INLINE_ONLY_ABBRVS - {"ca"} | {
         "ext", "v", "veg", "c", "cró", "diag", "trav", "trv", 
-        "terr", "urb", "dept", "prov", "t. m", "ed", "bxs", "bda",
-        "of", "av", "ctra", "pl", "bv", "b", "ap. de corr", "s/àt",
-        "d. c", "att", "sign", "c. p", "apmt", "àt",
-        "bnc", "p. d", "pol. ind", "rbla", "tel", "bl", "cant", "cas",
+        "terr", "urb", "dept", "prov", "ed", "bxs", "bda",
+        "of", "av", "ctra", "pl", "bv", "b", "att", "sign", "apmt", "àt",
+        "bnc", "pol. ind", "rbla", "tel", "bl", "cant", "cas",
         "cint", "com", "distr", "drec", "dta", "entl", "esc",
         "esq", "fca", "hab", "parc", "pdís", "ptge", "pg", "pcta",
-        "pobl", "pta", "ptal", "pda", "ra", "ex", "p. ex", "ntra", "ntre"
+        "pobl", "pta", "ptal", "pda", "ra", "ex", "ntra", "ntre"
     }
 
     DATE_ABBRVS = Rules.DATE_ABBRVS | {
@@ -99,16 +96,13 @@ class CaRules(Rules):
         super()._compile_regex_dynamically()
 
         # Vè./Vós.
-        # Don't split if the next word is NOT a common starter (assumes it's a proper name).
-        # Resolves the ambiguity "Ud. Marco" vs "Ud. Mañana".
         cls.MID_SENTENCE_FINDER_LST.extend([
             re.compile(rf"""
                 \b(?i:{build_optimized_pattern({"vè", "vós"})})\.
                 (?!\s+(?:{cls.COMMON_STARTERS_PATTERN})\b)
             """, re.VERBOSE),
 
-            # Dotted geographic pairs with optional whitespace (EE. UU., EE.UU., FF. AA.)
-            # Only protect the first pair so a following sentence still splits.
-            re.compile(r"\b[A-Z]{2}\.(?=\s*[A-Z]{1,2}\.)"),
+            # (Attempt to handle) whitespace separated abbreviations (a. C., d. C.)
+            re.compile(r"\b[a-z]{1}\.(?=\s[A-Z]{1}\.)"),
 
         ])
