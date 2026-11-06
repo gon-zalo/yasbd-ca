@@ -17,7 +17,7 @@ TEST_DATA = [
     "Consulteu el par. 5 per a més informació.",
     "Truca al dir. gral. al tel. 555-1234.",
     "Vaig comprar pa, llet, etc. per al sopar.",
-    # "La temperatura del motor va arribar als 120,5 °C.| Afortunadament, el sistema va continuar funcionant.",
+    "La temperatura del motor va arribar als 120,5 ºC.| Afortunadament, el sistema va continuar funcionant.",
     "Llegiu, p. ex., el capítol 5.",
     "Viu al carrer del Perú s/n.| Demà el visitem.",
     "La reunió és el dl. 15 de gener.",
