@@ -20,6 +20,6 @@ sentences = list(detector.segment("Vas veure la pel·lícula? Sí, va ser incre�
 
 # Abbreviations
 address = list(detector.segment("La casa és a la urb. Les Roses, c/ Balaguer núm. 20, bl. B, esc. esq."))
-# ['La casa és a la urb. Les Roses, c/ Uva núm. 20, bl. B, esc. esq.']
+# ['La casa és a la urb. Les Roses, c/ Balaguer núm. 20, bl. B, esc. esq.']
 
 ```
